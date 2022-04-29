@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Check Genre</div>
+      <div class="content">
+        welcome {{request.user}}
+        <a href="/logout">Logout</a>
+        <form action="" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Name</span>
+              {{form.name}}
+            </div>
+            <div class="input-box">
+              <span class="details">Upload Song</span>
+              {{form.record}}
+            </div>
+          </div>
+          <div class="button">
+            <input type="submit" value="Predict" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
